@@ -1,0 +1,33 @@
+# general mac
+.DS_Store
+
+## python
+*.pyc
+*.pyo
+*.npy
+.pytest_cache
+## Pycharm
+.idea
+
+## sqlite dbs ¯\_(ツ)_/¯
+*.db
+
+## remove fits
+*.fits
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.fdb_latexmk
+*.gz
+*.ipynb_checkpoints
