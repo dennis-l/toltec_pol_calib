@@ -24,10 +24,8 @@ lmt_observer = Observer(location=lmt_location,
     timezone='America/Mexico_City'
 )
 
-
 start_datetime = '2022-05-01 00:00:00'
 observe_time =  Time(start_datetime) + np.linspace(0, 24, 100)*u.hour
-
 
 names_3c = ['3C 286', '3C 273']
 for source in names_3c:
@@ -40,6 +38,7 @@ for source in names_3c:
         time=observe_time,
         brightness_shading=True,
     )
+    plt.title(source)
     plt.axhline(y=20, linestyle='--', color='black')
     plt.savefig(f'./plots/obsplanner/{source}.png', dpi=250)
     plt.close('all')

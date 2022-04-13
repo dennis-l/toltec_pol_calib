@@ -23,7 +23,8 @@ if __name__ == "__main__":
     amapola_data['polangle'] = np.arctan2(amapola_data['U'], amapola_data['Q'])
     amapola_data['rotatedpolangle'] = np.arctan2(amapola_data['U'], amapola_data['Q']) + (np.pi / 2)
 
-    band_7 = amapola_data.loc[amapola_data['Freq'] == 233].copy()
+    freq = 233
+    band_7 = amapola_data.loc[amapola_data['Freq'] == freq].copy()
 
     targets = ['J1331+3030', 'J1229+0203']
     names_3c = ['3C 286', '3C 273']
@@ -33,7 +34,7 @@ if __name__ == "__main__":
         plot_obj, sp_obj = plt.subplots(5, 1, figsize=(8, 10), sharex=True, dpi=200) # gridspec_kw={'hspace': 0, 'wspace': 0}
         sp_obj = sp_obj.ravel()
 
-        sp_obj[0].set_title(f"{source} ({name_3c})")
+        sp_obj[0].set_title(f"{source} ({name_3c}) @ {freq} GHz")
 
         # Total Intensity (Stokes I )
         sp_obj[0].plot(this_source_only['Date'], this_source_only['I'], '.', color='firebrick')
@@ -47,13 +48,13 @@ if __name__ == "__main__":
         sp_obj[1].plot(this_source_only['Date'], this_source_only['Q'], '.', color='firebrick')
         sp_obj[1].errorbar(this_source_only['Date'], this_source_only['Q'], this_source_only['eQ'], ls='none', color='firebrick')
         sp_obj[1].set_ylabel("Stokes Q [Jy]")
-        sp_obj[1].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
+        #sp_obj[1].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
         # Stokes U
         sp_obj[2].plot(this_source_only['Date'], this_source_only['U'], '.', color='firebrick')
         sp_obj[2].errorbar(this_source_only['Date'], this_source_only['U'], this_source_only['eU'], ls='none', color='firebrick')
         sp_obj[2].set_ylabel("Stokes U [Jy]")
-        sp_obj[2].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
+        #sp_obj[2].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
         # Polarization Percentage
         sp_obj[3].plot(this_source_only['Date'], this_source_only['polpercentage'], '.')
@@ -66,7 +67,7 @@ if __name__ == "__main__":
         sp_obj[4].plot(this_source_only['Date'], np.arctan(np.tan(this_source_only['polangle'])) *  (360 /  (2 * np.pi)), '.')
         sp_obj[4].set_ylabel("Pol. Angle [Degree]")
         sp_obj[4].set_ylim((-90, 90))
-        sp_obj[4].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
+        #sp_obj[4].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
         plot_obj.tight_layout()
         plot_obj.savefig(f'./plots/amapola/{name_3c}.png', dpi=250)
