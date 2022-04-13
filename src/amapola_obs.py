@@ -27,7 +27,7 @@ if __name__ == "__main__":
     band_7 = amapola_data.loc[amapola_data['Freq'] == freq].copy()
 
     targets = ['J1331+3030', 'J1229+0203']
-    names_3c = ['3C 286', '3C 273']
+    names_3c = ['3C286', '3C273']
     for source, name_3c in zip(targets, names_3c):
         this_source_only = band_7.loc[band_7['Src'] == source + ' '].copy()
 
