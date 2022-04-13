@@ -69,6 +69,6 @@ if __name__ == "__main__":
         sp_obj[4].set_ylim((-90, 90))
         #sp_obj[4].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
-        plot_obj.tight_layout()
+        #plot_obj.tight_layout()
         plot_obj.savefig(f'./plots/amapola/{name_3c}.png', dpi=250)
         plt.close('all')
