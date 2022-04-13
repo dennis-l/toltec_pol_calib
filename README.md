@@ -14,16 +14,16 @@
 
 #### 3C286
 
-![3C286 ALMA Observations](plots/amapola/3C 286.png)
+![3C286 ALMA Observations](./plots/amapola/3C 286.png)
 
-![3C286 ALMA Planner](plots/obsplanner/3C 286.png)
+![3C286 ALMA Planner](./plots/obsplanner/3C 286.png)
 
 #### 3C147
 
 #### 3C273
-![3C273 ALMA Observations](plots/amapola/3C 273.png)
+![3C273 ALMA Observations](./plots/amapola/3C 273.png)
 
-![3C273 ALMA Planner](plots/obsplanner/3C 273.png)
+![3C273 ALMA Planner](./plots/obsplanner/3C 273.png)
 
 
 
