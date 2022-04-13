@@ -40,6 +40,7 @@ for source in names_3c:
     )
     plt.title(source)
     plt.axhline(y=20, linestyle='--', color='black')
+    plt.tight_layout()
     plt.savefig(f'./plots/obsplanner/{source}.png', dpi=250)
     plt.close('all')
     
