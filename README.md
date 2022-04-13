@@ -1,5 +1,7 @@
 # TolTEC Polarization Calibration
 
+- Altitude vs. Time plots can also be made using the [TolTEC Observation Planner](http://toltec.lmtgtm.org/toltec_obs_planner)
+
 #### Requirements:
 - Minimum Polarized Flux
     - 7.5 mJy @ 1.1 mm
@@ -15,3 +17,5 @@
 #### 3C147
 
 #### 3C273
+
+
