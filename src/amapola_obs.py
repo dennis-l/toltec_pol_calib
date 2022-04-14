@@ -14,11 +14,23 @@ try:
 except:
     pass
 
+def pol_percentage_err(I, Q, U, eI, eQ, eU):
+    
+    term_1 = (1 / (Q**2 + U**2)) * ((Q * eQ)**2 + (U * eU)**2) 
+    term_2 = (((Q / I)**2 + (U / I)**2) * (eI**2)) 
+    
+    return (100 / I) * np.sqrt(term_1 + term_2)
+
+
 if __name__ == "__main__":
     amapola_data_file = './data/amapola.txt'
     amapola_data = pd.read_csv(amapola_data_file, delimiter='\t')
     amapola_data['Date'] = pd.to_datetime(amapola_data['Date'])
+
+    # polpercentage
     amapola_data['polpercentage'] = 100 * np.sqrt(amapola_data['Q']**2 + amapola_data['U']**2) / amapola_data['I']
+    amapola_data['epolpercentage'] = pol_percentage_err(amapola_data['I'], amapola_data['Q'], amapola_data['U'], amapola_data['eI'], amapola_data['eQ'], amapola_data['eU'])
+
     amapola_data['p'] =  amapola_data['P'] / amapola_data['I']
     amapola_data['polangle'] = np.arctan2(amapola_data['U'], amapola_data['Q'])
     amapola_data['rotatedpolangle'] = np.arctan2(amapola_data['U'], amapola_data['Q']) + (np.pi / 2)
@@ -58,6 +70,7 @@ if __name__ == "__main__":
 
         # Polarization Percentage
         sp_obj[3].plot(this_source_only['Date'], this_source_only['polpercentage'], '.')
+        sp_obj[3].errorbar(this_source_only['Date'], this_source_only['polpercentage'], this_source_only['epolpercentage'], ls='none', color='firebrick')
         sp_obj[3].axhline(np.mean(this_source_only['polpercentage']),  ls='--', label=f"mean = {np.mean(this_source_only['polpercentage']):0.3f}, std={np.std(this_source_only['polpercentage']):0.3f}", color='darkorchid')
         sp_obj[3].axhspan(np.mean(this_source_only['polpercentage']) - np.std(this_source_only['polpercentage']), np.mean(this_source_only['polpercentage']) + np.std(this_source_only['polpercentage']), alpha=0.12, color='red', edgecolor=None)
         sp_obj[3].set_ylabel("Pol. Percentage [%]")
