@@ -69,7 +69,7 @@ if __name__ == "__main__":
         #sp_obj[2].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
         # Polarization Percentage
-        sp_obj[3].plot(this_source_only['Date'], this_source_only['polpercentage'], '.')
+        sp_obj[3].plot(this_source_only['Date'], this_source_only['polpercentage'], '.', color='firebrick')
         sp_obj[3].errorbar(this_source_only['Date'], this_source_only['polpercentage'], this_source_only['epolpercentage'], ls='none', color='firebrick')
         sp_obj[3].axhline(np.mean(this_source_only['polpercentage']),  ls='--', label=f"mean = {np.mean(this_source_only['polpercentage']):0.3f}, std={np.std(this_source_only['polpercentage']):0.3f}", color='darkorchid')
         sp_obj[3].axhspan(np.mean(this_source_only['polpercentage']) - np.std(this_source_only['polpercentage']), np.mean(this_source_only['polpercentage']) + np.std(this_source_only['polpercentage']), alpha=0.12, color='red', edgecolor=None)
