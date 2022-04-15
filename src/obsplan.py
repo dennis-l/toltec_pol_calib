@@ -27,7 +27,7 @@ lmt_observer = Observer(location=lmt_location,
 start_datetime = '2022-05-01 00:00:00'
 observe_time =  Time(start_datetime) + np.linspace(0, 24, 100)*u.hour
 
-names_3c = ['3C286', '3C273']
+names_3c = ['3C286', '3C273', '3C279']
 for source in names_3c:
     target = FixedTarget.from_name(source)
 
