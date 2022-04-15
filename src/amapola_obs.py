@@ -77,7 +77,12 @@ if __name__ == "__main__":
         sp_obj[3].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
         #sp_obj[1].set_ylim((0.0, 10))
 
-        sp_obj[4].plot(this_source_only['Date'], np.arctan(np.tan(this_source_only['polangle'])) *  (360 /  (2 * np.pi)), '.')
+        # Polarization Angle.
+        evpa_arr = (np.array(this_source_only['EVPA']) * u.radian).to_value(u.degree)
+        eevpa_arr = (np.array(this_source_only['eEVPA']) * u.radian).to_value(u.degree)
+        sp_obj[4].plot(this_source_only['Date'], evpa_arr, '.', color='firebrick')
+        sp_obj[4].errorbar(this_source_only['Date'], evpa_arr, eevpa_arr, ls='none', color='firebrick')
+        #sp_obj[4].plot(this_source_only['Date'], np.arctan(np.tan(this_source_only['polangle'])) *  (360 /  (2 * np.pi)), '.')
         sp_obj[4].set_ylabel("Pol. Angle [Degree]")
         sp_obj[4].set_ylim((-90, 90))
         #sp_obj[4].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)

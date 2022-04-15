@@ -12,7 +12,8 @@
 
 ### Sources from the Proposal
 
-#### 3C286
+#### 3C286 (J1331+3030)
+[AMAPOLA Dashboard](http://www.alma.cl/~skameno/AMAPOLA/J1331+3030.flux.html)
 
 ![3C286 ALMA Observations](./plots/amapola/3C286.png)
 
@@ -20,7 +21,9 @@
 
 #### 3C147
 
-#### 3C273
+#### 3C273 (J1229+0203)
+[AMAPOLA Dashboard](http://www.alma.cl/~skameno/AMAPOLA/J1229+0203.flux.html)
+
 ![3C273 ALMA Observations](./plots/amapola/3C273.png)
 
 ![3C273 ALMA Planner](./plots/obsplanner/3C273.png)
