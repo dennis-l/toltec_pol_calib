@@ -83,7 +83,7 @@ if __name__ == "__main__":
         sp_obj[4].plot(this_source_only['Date'], evpa_arr, '.', color='firebrick')
         sp_obj[4].errorbar(this_source_only['Date'], evpa_arr, eevpa_arr, ls='none', color='firebrick')
         #sp_obj[4].plot(this_source_only['Date'], np.arctan(np.tan(this_source_only['polangle'])) *  (360 /  (2 * np.pi)), '.')
-        sp_obj[4].set_ylabel("Pol. Angle [Degree]")
+        sp_obj[4].set_ylabel("EVPA [Degree]")
         sp_obj[4].set_ylim((-90, 90))
         #sp_obj[4].legend(fancybox=False, loc='lower left', handletextpad=0.7, frameon=False)
 
