@@ -1,0 +1,66 @@
+simu:
+  jobkey: 3c273_simu
+  instrument:
+    name: toltec
+    polarized: true
+    hwp:
+      f_rot: 2.0 Hz
+      f_smp: 1000.0 Hz
+      rotator_enabled: true
+    calobj_index: null
+    array_prop_table: null
+  mapping:
+    type: rastajous
+    target: 3C273
+    target_frame: icrs
+    ref_frame: altaz
+    t0: '2022-05-01T06:00:00.000'
+    length: 0.1 arcmin
+    space: 0.01 arcmin
+    n_scans: '10.0'
+    rot: 0.0 deg
+    speed: 5.0 arcsec / s
+    t_turnaround: 12.0 s
+    x_length_0: 2.0 arcmin
+    y_length_0: 2.0 arcmin
+    x_omega_0: 9.2 rad / s
+    y_omega_0: 8.0 rad / s
+    delta_0: 45.0 deg
+    x_length_1: 0.5 arcmin
+    y_length_1: 0.5 arcmin
+    x_omega_1: 0.46 rad / s
+    y_omega_1: 0.4 rad / s
+    delta_1: 45.0 deg
+    delta: 0.0 deg
+  obs_params:
+    t_exp: null
+    f_smp_mapping: 10.0 Hz
+    f_smp_probing: 100.0 Hz
+  sources:
+  - type: toltec_power_loading
+    atm_model_name: toast #am_q25
+    atm_model_params: null
+    atm_cache_dir: null
+  - type: point_source_catalog
+    filepath: quasar_src.csv
+    name_col: 'name'
+    pos_cols: ['ra', 'dec']
+    data_cols:
+    - colname: '{{array_name|upper}}_{{stokes_param}}'
+      stokes_param: ['I', 'Q', 'U']
+      array_name: ['a1100', 'a1400', 'a2000']
+  perf_params:
+    chunk_len: 10.0 s
+    catalog_model_render_pixel_size: 0.5 arcsec
+    mapping_eval_interp_len: null
+    mapping_erfa_interp_len: 300.0 s
+    aplm_eval_interp_alt_step: 2.0 arcmin
+    pre_eval_sky_bbox_padding_size: 4.0 arcmin
+    pre_eval_t_grid_size: 200
+    anim_frame_rate: 1.0 Hz
+  plots: []
+  exports: []
+  plot_only: false
+  export_only: false
+  output_context: {}
+

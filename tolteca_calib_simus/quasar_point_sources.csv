@@ -1,0 +1,6 @@
+|name|    ra|   dec|A1100_I|A1100_Q|A1100_U|A1400_I|A1400_Q|A1400_U|A2000_I|A2000_Q|A2000_U|
+|char|double|double| double| double| double| double| double| double| double| double| double|
+|    |   deg|   deg|    mJy|    mJy|    mJy|    mJy|    mJy|    mJy|    mJy|    mJy|    mJy|
+|null|  null|  null|   null|   null|   null|   null|   null|   null|   null|   null|   null|
+3C273 187.28  2.052    5345       0    -100    5345       0    -100    5345       0    -100
+3C286 202.78 30.509     325      10      45     325      10      45     325      10      45
